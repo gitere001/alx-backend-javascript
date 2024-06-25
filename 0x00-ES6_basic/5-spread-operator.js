@@ -6,6 +6,6 @@
  * @param {string} string - The string to concatenate.
  * @return {Array} A new array that contains all the elements of the input arrays and the string.
  */
-export default function concatArrays(array1, array2, string) {
-	return [...array1, ...array2, ...string];
-  }
+export default function concatArrays (array1, array2, string) {
+  return [...array1, ...array2, ...string];
+}
