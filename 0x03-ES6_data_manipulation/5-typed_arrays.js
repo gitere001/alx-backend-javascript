@@ -1,15 +1,18 @@
+/**
+ * Creates an Int8Array typed array with the specified
+ * length and sets the value at the given position.
+ *
+ * @param {number} length - The length of the typed array.
+ * @param {number} position - The position in the typed array to set the value.
+ * @param {number} value - The value to set at the given position.
+ * @throws {Error} If the position is outside the range of the typed array.
+ * @return {DataView} The DataView object representing the typed array.
+ */
 export default function createInt8TypedArray(length, position, value) {
-  if (typeof length !== 'number' || typeof position !== 'number' || typeof value !== 'number') {
-    throw new TypeError('All arguments must be numbers');
-  }
-  if (length < 0 || position < 0) {
-    throw new RangeError('Length and position must be non-negative');
-  }
-  const buffer = new ArrayBuffer(length);
-  const view = new DataView(buffer);
   if (position >= length) {
-    throw new RangeError('Position must be less than length');
+    throw new Error('Position outside range');
   }
-  view.setInt8(position, value);
-  return buffer;
+  const buf = new DataView(new ArrayBuffer(length), 0, length);
+  buf.setInt8(position, value);
+  return buf;
 }
