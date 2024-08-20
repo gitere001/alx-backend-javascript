@@ -1,0 +1,14 @@
+{
+  "name": "alx-backend-javascript",
+  "version": "1.0.0",
+  "description": "Welcome to ALX Backend JavaScript repo . This repo contains directories for javascript backend learning purposes",
+  "main": "practice.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "semistandard",
+    "lint:fix": "semistandard --fix"
+  },
+  "author": "",
+  "license": "ISC"
+}
