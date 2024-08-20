@@ -4,7 +4,6 @@ const fs = require('fs');
 
 const app = express();
 const PORT = 1245;
-const HOST = 'localhost';
 
 const countStudents = (dataPath) => new Promise((resolve, reject) => {
   fs.readFile(dataPath, 'utf-8', (err, data) => {
