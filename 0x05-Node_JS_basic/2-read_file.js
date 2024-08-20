@@ -30,11 +30,11 @@ const countStudents = (path) => {
       console.log(`Number of students in CS: ${CS} List: ${studentFields.CS.join(', ')}`);
       console.log(`Number of students in SWE: ${SWE} List: ${studentFields.SWE.join(', ')}`);
     } else {
-      console.log('Cannot load the database');
+      throw new Error('Cannot load the database');
     }
   } else {
-    console.log('Cannot load the database');
+    throw new Error('Cannot load the database');
   }
 };
 
-countStudents('database.csv');
+module.exports = countStudents;
