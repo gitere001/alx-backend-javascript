@@ -6,7 +6,7 @@ const countStudents = (path) => new Promise((resolve, reject) => {
       reject(new Error('Cannot load the database'));
     }
     if (data) {
-      const lines = data.trim().split('\n');
+      const lines = data.toString('utf-8').trim().split('\n');
       const noHeader = lines.slice(1).filter((line) => line.trim() !== '');
       let noOfStudents = 0;
       const studentFields = {};
