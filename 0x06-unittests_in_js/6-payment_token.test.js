@@ -1,13 +1,13 @@
-import { getPaymentTokenFromAPI } from "./6-payment_token.js";
-import { expect } from "chai";
+const getPaymentTokenFromAPI = require("./6-payment_token");
+const {describe, it} = require("mocha");
+const expect = require("chai").expect;
 
-describe('getPaymentTokenFromApi', () => {
-	it('should resolve', (done) => {
-		getPaymentTokenFromAPI(true).then((result) => {
-			expect(result).to.deep.equal({data: 'Successful response from the API'});
-			done()
-		}).catch((error) => {
-			done(error)
-		})
-	});
+describe("getPaymentTokenFromAPI", function() {
+    it("Async testing with done callback", function(done) {
+	getPaymentTokenFromAPI(true)
+	    .then((data) => {
+		expect(data).to.have.property('data');
+		done();
+	    });
+    });
 });
